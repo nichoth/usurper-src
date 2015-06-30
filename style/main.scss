@@ -1,0 +1,61 @@
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+@include font-face(
+  "league-gothic",
+  "../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont",
+  $file-formats: eot woff svg ttf
+);
+
+// type
+$displayFont: didot, 'Abril Fatface', sans-serif;
+$slabFont: 'Josefin Slab', serif;
+$sansFont: 'league-gothic', Helvetica, sans-serif;
+
+$giantHeadFont: $displayFont;
+
+// color
+$gray: gray;
+$darkGray: shade($gray, 50%);
+$headColor: #363138;
+
+// usurper color
+$dark: rgb(23,0,33);
+
+%giant-head {
+  font: {
+    family: $giantHeadFont;
+    size: 13vw;
+  }
+}
+
+%usurper-head {
+  color: $headColor;
+  text-transform: uppercase;
+  letter-spacing: -0.1em;
+  margin-top: 26vh;
+}
+
+html {
+  background-color: $dark;
+}
+
+hgroup.main {
+  text-align: center;
+}
+
+h1.main {
+  @extend %giant-head;
+  @extend %usurper-head;
+  margin-bottom: 0;
+}
+
+.little-main {
+  font-size: 1.5vw;
+  font-family: $slabFont;
+  color: white;
+  margin-top: 0;
+  letter-spacing: 3em;
+  text-transform: uppercase;
+  margin-left: 4em;
+  font-weight: normal;
+}

@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "league-gothic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont.woff") format("woff"), url("../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont.ttf") format("truetype"), url("../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont.svg#league-gothic") format("svg"); }
+h1.main {
+  font-family: didot, "Abril Fatface", sans-serif;
+  font-size: 13vw; }
+
+h1.main {
+  color: #363138;
+  text-transform: uppercase;
+  letter-spacing: -0.1em;
+  margin-top: 26vh; }
+
+html {
+  background-color: #170021; }
+
+hgroup.main {
+  text-align: center; }
+
+h1.main {
+  margin-bottom: 0; }
+
+.little-main {
+  font-size: 1.5vw;
+  font-family: "Josefin Slab", serif;
+  color: white;
+  margin-top: 0;
+  letter-spacing: 3em;
+  text-transform: uppercase;
+  margin-left: 4em;
+  font-weight: normal; }
+
+/*# sourceMappingURL=style.css.map */

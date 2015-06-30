@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "npm run watch-sass & npm start",
+    "watch-sass": "sass --watch style/main.scss:public/style.css",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "ecstatic": "^0.8.0"
+  }
+}

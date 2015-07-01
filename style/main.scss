@@ -55,7 +55,9 @@ $hrColor: $violetGray;
 }
 
 html {
-  background-color: $darkViolet;
+  // background-color: $darkViolet;
+  height: 100%;
+  @include radial-gradient($darkViolet 60%, black 160%);
 }
 
 .main-hr {

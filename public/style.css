@@ -13,6 +13,21 @@ h1.main {
   letter-spacing: -0.1em;
   margin-top: 26vh; }
 
+.main-hr {
+  width: 58%;
+  margin-top: -2em;
+  margin-bottom: 0;
+  border: none;
+  height: 30px;
+  overflow: hidden;
+  color: gray; }
+  .main-hr:after {
+    content: ".......................................................................";
+    margin-left: 1em;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.7em;
+    letter-spacing: 18px; }
+
 html {
   background-color: #170021; }
 
@@ -26,7 +41,7 @@ h1.main {
   font-size: 1.5vw;
   font-family: "Josefin Slab", serif;
   color: white;
-  margin-top: 0;
+  margin-top: 1.5em;
   letter-spacing: 3em;
   text-transform: uppercase;
   margin-left: 4em;

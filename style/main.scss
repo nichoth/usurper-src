@@ -16,6 +16,7 @@ $giantHeadFont: $displayFont;
 // colors
 $gray: gray;
 $darkGray: shade($gray, 50%);
+$lightGray: tint($gray, 50%);
 $violetGray: #363138;
 $darkViolet: rgb(23,0,33);
 
@@ -55,10 +56,13 @@ $hrColor: $violetGray;
 }
 
 html {
-  // background-color: $darkViolet;
+  background-color: $darkViolet;
   height: 100%;
-  @include radial-gradient($darkViolet 60%, black 160%);
+  // @include radial-gradient($darkViolet 60%, black 160%);
 }
+
+
+// head part
 
 .main-hr {
   @extend %main-hr;
@@ -79,8 +83,14 @@ h1.main {
   font-family: $slabFont;
   color: white;
   margin-top: -1em;
-  letter-spacing: 3em;
+  word-spacing: 2.9em;
+  letter-spacing: 1.8em;
   text-transform: uppercase;
   margin-left: 4em;
   font-weight: normal;
+}
+
+.diamond {
+  font-size: 0.8em;
+  color: $lightGray;
 }

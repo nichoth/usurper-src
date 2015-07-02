@@ -56,9 +56,13 @@ $hrColor: $violetGray;
 }
 
 html {
-  background-color: $darkViolet;
+  background-color: black;
   height: 100%;
   // @include radial-gradient($darkViolet 60%, black 160%);
+}
+
+body {
+  margin: 0;
 }
 
 
@@ -93,4 +97,17 @@ h1.main {
 .diamond {
   font-size: 0.8em;
   color: $lightGray;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 220px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-image: url(assets/img/bg-bah.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }

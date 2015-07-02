@@ -23,12 +23,17 @@ $darkViolet: rgb(23,0,33);
 // elmt colors
 $headColor: $violetGray;
 $hrColor: $violetGray;
+$bodyTextColor: white;
 
 %giant-head {
   font: {
     family: $giantHeadFont;
     size: 13vw;
   }
+}
+
+%caps {
+  text-transform: uppercase;
 }
 
 %usurper-head {
@@ -63,6 +68,8 @@ html {
 
 body {
   margin: 0;
+  color: $bodyTextColor;
+  font-family: $slabFont;
 }
 
 
@@ -85,7 +92,7 @@ h1.main {
 .little-main {
   font-size: 1.5vw;
   font-family: $slabFont;
-  color: white;
+  color: $bodyTextColor;
   margin-top: -1em;
   word-spacing: 2.9em;
   letter-spacing: 1.8em;
@@ -100,7 +107,6 @@ h1.main {
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.5);
   height: 220px;
   width: 100%;
   position: fixed;
@@ -110,4 +116,15 @@ footer {
   background-image: url(assets/img/bg-bah.png);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.description {
+  margin-top: 4em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  p {
+    margin: 0;
+    margin-bottom: .5em;
+  }
 }

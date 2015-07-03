@@ -25,6 +25,7 @@ $headColor: $violetGray;
 $hrColor: $violetGray;
 $bodyTextColor: white;
 $descriptionColor: rgb(178, 174, 174);
+$navColor: $bodyTextColor;
 
 %giant-head {
   font: {
@@ -165,5 +166,56 @@ footer {
     background-color: black;
     display: inline-block;
     padding: 0 24px;
+  }
+}
+
+%main-nav {
+  list-style: none;
+  a {
+    color: $navColor;
+    text-decoration: none;
+  }
+  li {
+    display: inline-block;
+  }
+}
+
+nav {
+  @extend %main-nav;
+  text-align: center;
+  margin-top: 5em;
+  text-transform: uppercase;
+  li {
+    margin: 0 5em;
+  }
+  a {
+    padding: 3em;
+    letter-spacing: 0.1em;
+  }
+}
+
+%icon {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  span {
+    position: relative;
+  }
+}
+
+.icon-triangle {
+  @extend %icon;
+  background-image: url(/assets/img/triangle.svg);
+  span {
+    top: 1.3em;
+  }
+}
+
+.icon-circle {
+  @extend %icon;
+  background-image: url(/assets/img/circle.svg);
+  span {
+    top: 0.2em;
   }
 }

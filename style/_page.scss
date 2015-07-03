@@ -1,0 +1,26 @@
+body.page {
+  .contact-info {
+    @extend %good-list;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    li {
+      margin-bottom: 0.5em;
+      font-size: 2em;
+    }
+    .phone-number {
+      letter-spacing: 0.1em;
+      word-spacing: -0.3em;
+    }
+  }
+
+  header {
+    text-align: center;
+    color: #675D6B;
+    font-size: 3em;
+    margin: 0.4em;
+    font-family: didot;
+    font-weight: bold;
+  }
+}

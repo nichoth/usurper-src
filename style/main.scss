@@ -26,6 +26,8 @@ $hrColor: $violetGray;
 $bodyTextColor: white;
 $descriptionColor: rgb(178, 174, 174);
 $navColor: $bodyTextColor;
+$linkColor: $navColor;
+$bodyLinkColor: $linkColor;
 
 %giant-head {
   font: {
@@ -173,7 +175,6 @@ footer {
   list-style: none;
   a {
     color: $navColor;
-    text-decoration: none;
   }
   li {
     display: inline-block;
@@ -219,3 +220,24 @@ nav {
     top: 0.2em;
   }
 }
+
+p a {
+  color: $bodyLinkColor;
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+}
+
+%good-list {
+  list-style: none;
+}
+
+%inline-list {
+  li {
+    display: inline-block;
+  }
+}
+
+@import "page";

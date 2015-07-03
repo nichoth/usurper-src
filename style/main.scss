@@ -16,6 +16,7 @@ $giantHeadFont: $displayFont;
 // colors
 $gray: gray;
 $darkGray: shade($gray, 50%);
+$mediumLightGray: tint($gray, 25%);
 $lightGray: tint($gray, 50%);
 $violetGray: #363138;
 $darkViolet: rgb(23,0,33);

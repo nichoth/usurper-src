@@ -128,3 +128,16 @@ footer {
     margin-bottom: .5em;
   }
 }
+
+.circle {
+  border: 1px;
+  border-radius: 50%;
+  // width: 200px;
+  // height: 200px;
+  border-color: white;
+  border-style: solid;
+  display: inline-block;
+  padding: 3em 3em;
+
+  text-align: center;
+}

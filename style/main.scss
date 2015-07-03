@@ -24,6 +24,7 @@ $darkViolet: rgb(23,0,33);
 $headColor: $violetGray;
 $hrColor: $violetGray;
 $bodyTextColor: white;
+$descriptionColor: rgb(178, 174, 174);
 
 %giant-head {
   font: {
@@ -107,6 +108,7 @@ h1.main {
 }
 
 footer {
+  opacity: 0.5;
   height: 220px;
   width: 100%;
   position: fixed;
@@ -119,6 +121,7 @@ footer {
 }
 
 .description {
+  color: $descriptionColor;
   margin-top: 4em;
   text-align: center;
   text-transform: uppercase;
@@ -126,6 +129,15 @@ footer {
   p {
     margin: 0;
     margin-bottom: .5em;
+  }
+  .line1 {
+    font-size: 1.3em;
+  }
+  .in {
+    font-size: 0.6em;
+  }
+  .line-last {
+    font-size: 0.8em;
   }
 }
 
@@ -140,4 +152,18 @@ footer {
   padding: 3em 3em;
 
   text-align: center;
+}
+
+.line-behind {
+  margin-bottom: 1.1em;
+  border-bottom: 1px solid gray;
+  width: 50%;
+  display: inline-block;
+  p {
+    position: relative;
+    top: 1.1em;
+    background-color: black;
+    display: inline-block;
+    padding: 0 24px;
+  }
 }

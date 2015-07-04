@@ -4,9 +4,9 @@
 
 $ruleColor: $lightGray;
 
-.top-section {
-  > * {
-    display: inline-block;
+.centered-nav {
+  li {
+    margin: 0 1em;
   }
 }
 
@@ -34,7 +34,7 @@ body.page {
     }
   }
 
-  header {
+  .little-logo {
     text-align: center;
     color: #675D6B;
     font-size: 3em;

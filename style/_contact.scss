@@ -10,8 +10,34 @@ $ruleColor: $lightGray;
   }
 }
 
+%small-logo {
+  font-size: 1.5vw;
+  font-family: "Josefin Slab", serif;
+  color: white;
+  margin-top: -1em;
+  word-spacing: 0.9em;
+  letter-spacing: 1.1em;
+  text-transform: uppercase;
+  margin-left: 2.2em;
+  font-weight: normal;
+}
+
 body.page {
   text-align: center;
+
+  h1.main {
+    font-size: 6em;
+  }
+
+  hgroup.main {
+    margin-top: 6vh;
+  }
+
+  .little-main {
+    margin-left: 2.2em;
+    word-spacing: 0.9em;
+    letter-spacing: 1.1em;
+  }
 
   .contact-info {
     @extend %good-list;
@@ -32,14 +58,5 @@ body.page {
       letter-spacing: 0.1em;
       word-spacing: -0.3em;
     }
-  }
-
-  .little-logo {
-    text-align: center;
-    color: #675D6B;
-    font-size: 3em;
-    margin: 0.4em;
-    font-family: didot;
-    font-weight: bold;
   }
 }

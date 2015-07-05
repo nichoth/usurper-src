@@ -45,7 +45,6 @@ $bodyLinkColor: $linkColor;
   color: $headColor;
   text-transform: uppercase;
   letter-spacing: -0.1em;
-  margin-top: 26vh;
 }
 
 %main-hr {
@@ -84,6 +83,7 @@ body {
   margin: 0;
   color: $bodyTextColor;
   font-family: $slabFont;
+  min-height: 88vh;
 }
 
 
@@ -94,6 +94,7 @@ body {
 }
 
 hgroup.main {
+  margin-top: 20vh;
   text-align: center;
 }
 
@@ -101,6 +102,7 @@ h1.main {
   @extend %giant-head;
   @extend %usurper-head;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .little-main {
@@ -149,6 +151,9 @@ footer {
   .line1 {
     font-size: 1.3em;
   }
+  .line2 {
+    font-style: italic;
+  }
   .in {
     font-size: 0.6em;
   }
@@ -186,7 +191,7 @@ footer {
 }
 
 .line-behind {
-  margin-bottom: 1.1em;
+  margin-bottom: 0.8em;
   border-bottom: 1px solid gray;
   width: 50%;
   display: inline-block;
@@ -215,9 +220,13 @@ footer {
 
 nav {
   @extend %main-nav;
+  font-weight: 100;
   text-align: center;
   margin-top: 5em;
   text-transform: uppercase;
+  position: fixed;
+  bottom: 3em;
+  width: 100%;
   li {
     margin: 0 5em;
   }

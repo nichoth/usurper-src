@@ -14,6 +14,7 @@
     "ecstatic": "^0.8.0"
   },
   "dependencies": {
+    "es6-promise": "^2.3.0",
     "serviceworker-cache-polyfill": "^3.0.0",
     "sw-register": "0.0.0",
     "whatwg-fetch": "^0.9.0"

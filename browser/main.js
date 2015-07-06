@@ -1,3 +1,13 @@
-var register = require('sw-register');
+window.Promise = window.Promise || require('es6-promise').Promise;
 
-register('/sw.js').then(console.log.bind(console));
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(function(registration) {
+      console.log('registration successful ',registration);
+      return registration;
+    })
+    .catch(function(err) {
+      console.log(err);
+    })
+  ;
+}

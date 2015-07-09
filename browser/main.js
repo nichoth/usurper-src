@@ -20,18 +20,20 @@ var s = window.s = document.querySelector.bind(document);
 var h = window.h = s('hgroup.main');
 var c = s('#content');
 var nav = s('nav');
-nav.className += ' hidden';
 
 var show = require('single-page')(function(href) {
   console.log('in show: ', arguments);
-  if (href === '/contact') {
+  if (href.indexOf('contact') >= 0) {
     rafScroll.remove();
+    nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
     document.body.className += ' page-contact';
     document.title = 'Usurper Handpoke • Contact';
     c.innerHTML = '';
     c.appendChild(contactEl);
   }
   else if (href === '/') {
+    scrollThing();
+    nav.className += ' hidden';
     document.body.className =
       document.body.className.replace(/(?:^|\s)page-contact(?!\S)/g , '');
     document.title = 'Usurper Handpoke';
@@ -41,14 +43,14 @@ var show = require('single-page')(function(href) {
 });
 require('catch-links')(document.querySelector('nav'), show);
 
-function updatePage(data) {
-  document.title = data.title || '';
-  document.body.className = data.bodyClass;
-  s('#content').replaceChild(data.content);
-}
 
 var offset = h.offsetTop;
 var oldScr = scrolltop();
+
+function scrollThing() {
+  rafScroll.init();
+  rafScroll.add(update);
+}
 
 function update(oldScr) {
   var scr = scrolltop();
@@ -60,6 +62,4 @@ function update(oldScr) {
     nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
   }
 }
-
-rafScroll.init();
-rafScroll.add(update);
+scrollThing();

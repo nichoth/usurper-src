@@ -5,6 +5,12 @@ var tmplPath = path.resolve(__dirname, '../templates');
 var rootPath = path.resolve(__dirname, '..');
 
 var contactStream = hyperstream({
+  'body': {
+    'class': 'page-contact'
+  },
+  'nav': {
+    'class': ''
+  },
   '#content': fs.createReadStream( path.join(tmplPath, 'contact.html') )
 });
 

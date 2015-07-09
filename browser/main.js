@@ -1,27 +1,18 @@
-/**
- * todo:
- *   * use `fetch` to get contact.html partial from an api endpoint
- *   * create static server
- *       - need to generate public/contact/index.html and public/index.html
- *         from templates index.html & partial/contact.html
- */
-
 window.Promise = window.Promise || require('es6-promise').Promise;
 require('whatwg-fetch');
-// require('register');
+// require('./register.js');
 var scrolltop = require('scrolltop');
 var rafScroll = require('raf-scroll');
-var fs = require('fs');
-var contactTmpl = fs.readFileSync(__dirname + '/partial/contact.html', 'utf8');
 var domify = require('domify');
 
 // elmts
-var contactEl;
 var descEl = d = window.d = document.querySelector('.description');
 var s = window.s = document.querySelector.bind(document);
 var h = window.h = s('hgroup.main');
 var c = s('#content');
 var nav = s('nav');
+var contactEl = s('.contact-info');
+
 
 fetch('/api/contact/').then(function(resp) {
   return resp.text();
@@ -32,6 +23,7 @@ fetch('/api/contact/').then(function(resp) {
 
 var show = require('single-page')(function(href) {
   console.log('in show: ', arguments);
+  document.body.className = document.body.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
   if (href.indexOf('contact') >= 0) {
     rafScroll.remove();
     nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
@@ -41,7 +33,6 @@ var show = require('single-page')(function(href) {
     c.appendChild(contactEl);
   }
   else if (href === '/') {
-    h.style.top = (h.offsetTop - (scrolltop()*0.3)) + 'px';
     scrollThing();
     document.body.className =
       document.body.className.replace(/(?:^|\s)page-contact(?!\S)/g , '');

@@ -7,6 +7,7 @@
  */
 
 window.Promise = window.Promise || require('es6-promise').Promise;
+require('whatwg-fetch');
 // require('register');
 var scrolltop = require('scrolltop');
 var rafScroll = require('raf-scroll');
@@ -15,12 +16,19 @@ var contactTmpl = fs.readFileSync(__dirname + '/partial/contact.html', 'utf8');
 var domify = require('domify');
 
 // elmts
-var contactEl = domify(contactTmpl);
+var contactEl;
 var descEl = d = window.d = document.querySelector('.description');
 var s = window.s = document.querySelector.bind(document);
 var h = window.h = s('hgroup.main');
 var c = s('#content');
 var nav = s('nav');
+
+fetch('/api/contact/').then(function(resp) {
+  return resp.text();
+}).then(function(html) {
+  console.log(html);
+  contactEl = domify(html);
+});
 
 var show = require('single-page')(function(href) {
   console.log('in show: ', arguments);
@@ -33,10 +41,11 @@ var show = require('single-page')(function(href) {
     c.appendChild(contactEl);
   }
   else if (href === '/') {
+    h.style.top = (h.offsetTop - (scrolltop()*0.3)) + 'px';
     scrollThing();
-    nav.className += ' hidden';
     document.body.className =
       document.body.className.replace(/(?:^|\s)page-contact(?!\S)/g , '');
+    console.log("bla");
     document.title = 'Usurper Handpoke';
     c.innerHTML = '';
     c.appendChild(descEl);

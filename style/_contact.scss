@@ -1,14 +1,4 @@
-%top-rule {
-
-}
-
 $ruleColor: $lightGray;
-
-.centered-nav {
-  li {
-    margin: 0 1em;
-  }
-}
 
 %small-logo {
   font-size: 1.5vw;
@@ -22,34 +12,37 @@ $ruleColor: $lightGray;
   font-weight: normal;
 }
 
-body.page {
+body.page-contact {
+  min-height: initial;
   text-align: center;
 
-  h1.main {
-    font-size: 6em;
-  }
-
   hgroup.main {
-    margin-top: 6vh;
+    // @include transition(top, 0.2s ease-out);
+    // top: 56px;
+    margin-top: 3em;
+    position: initial;
   }
 
-  .little-main {
-    margin-left: 2.2em;
-    word-spacing: 0.9em;
-    letter-spacing: 1.1em;
-  }
+  // .little-main {
+  //   margin-left: 2.2em;
+  //   word-spacing: 0.9em;
+  //   letter-spacing: 1.1em;
+  // }
 
   .contact-info {
+    color: $grayText;
     @extend %good-list;
     display: inline-block;
     font-weight: 100;
     text-align: center;
-    margin-top: 15vh;
-    margin-bottom: 10vh;
+    // margin-top: 15vh;
+    margin-top: 4em;
     padding: 1.5em 0 0.5em 0;
     border-top: 1px solid $ruleColor;
     border-bottom: 1px solid $ruleColor;
-
+    a {
+      color: $grayText;
+    }
     li {
       margin-bottom: 0.5em;
       font-size: 2em;

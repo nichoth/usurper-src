@@ -25,9 +25,10 @@ $darkViolet: rgb(23,0,33);
 $headColor: $violetGray;
 $hrColor: $violetGray;
 $bodyTextColor: white;
-$descriptionColor: rgb(178, 174, 174);
-$navColor: $bodyTextColor;
-$linkColor: $navColor;
+$grayText: rgb(178, 174, 174);
+$descriptionColor: $grayText;
+$navColor: white;
+$linkColor: white;
 $bodyLinkColor: $linkColor;
 
 %giant-head {

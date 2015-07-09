@@ -12,15 +12,29 @@ $ruleColor: $lightGray;
   font-weight: normal;
 }
 
-body.page-contact {
+%no-scroll {
   min-height: initial;
+  hgroup.main {
+    @include transition(top, 0.2s ease-out);
+    top: 8.25vh;
+  }
+  #content {
+    margin-top: 32vh;
+    height: 68vh;
+  }
+}
+
+body.no-scroll {
+  @extend %no-scroll;
+}
+
+body.page-contact {
+  @extend %no-scroll;
   text-align: center;
 
   hgroup.main {
-    // @include transition(top, 0.2s ease-out);
-    // top: 56px;
-    margin-top: 3em;
-    position: initial;
+    // margin-top: 3em;
+    // position: initial;
   }
 
   // .little-main {

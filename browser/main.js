@@ -13,11 +13,9 @@ var c = s('#content');
 var nav = s('nav');
 var contactEl = s('.contact-info');
 
-
 fetch('/api/contact/').then(function(resp) {
   return resp.text();
 }).then(function(html) {
-  console.log(html);
   contactEl = domify(html);
 });
 
@@ -33,10 +31,10 @@ var show = require('single-page')(function(href) {
     c.appendChild(contactEl);
   }
   else if (href === '/') {
+    setup();
     scrollThing();
     document.body.className =
       document.body.className.replace(/(?:^|\s)page-contact(?!\S)/g , '');
-    console.log("bla");
     document.title = 'Usurper Handpoke';
     c.innerHTML = '';
     c.appendChild(descEl);
@@ -48,12 +46,43 @@ require('catch-links')(document.querySelector('nav'), show);
 var offset = h.offsetTop;
 var oldScr = scrolltop();
 
+function noScroll() {
+  rafScroll.remove();
+  document.body.className += ' no-scroll';
+}
+
+function scrolledToBottom() {
+  return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+}
+
+function changeToFullPage() {
+  if ( scrolledToBottom() ) {
+    // get description dist from top
+    d.style.top = pxToVh(d.getBoundingClientRect().top) + 'vh';
+    noScroll();
+  }
+}
+
 function scrollThing() {
   rafScroll.init();
   rafScroll.add(update);
+  rafScroll.add(changeToFullPage);
 }
 
-function update(oldScr) {
+function pxToVh(px) {
+  return px / (window.innerHeight / 100);
+}
+
+window.ptv = pxToVh;
+
+function setup() {
+  h.style.top = (h.offsetTop - (scrolltop()*0.3)) + 'px';
+  if (scrolltop() > 100) {
+    nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
+  }
+}
+
+function update() {
   var scr = scrolltop();
   if (oldScr === scr) return;
   oldScr = scr;
@@ -63,4 +92,3 @@ function update(oldScr) {
     nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
   }
 }
-scrollThing();

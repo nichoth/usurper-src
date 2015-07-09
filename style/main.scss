@@ -165,15 +165,19 @@ footer {
 // description
 .description {
   // @extend %transition;
-  @include transition(all 0.25s);
+  // @include transition(bottom 0.25s);
   position: absolute;
   width: 100%;
-  bottom: -20%;
+  bottom: -20vh;
   color: $descriptionColor;
   margin-top: 4em;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  body.no-scroll & {
+    bottom: initial;
+    margin-top: 0;
+  }
   p {
     margin: 0;
     margin-bottom: .5em;

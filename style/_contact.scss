@@ -24,7 +24,7 @@ $ruleColor: $lightGray;
   }
 }
 
-body.no-scroll {
+.no-scroll {
   @extend %no-scroll;
 }
 

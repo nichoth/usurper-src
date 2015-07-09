@@ -174,9 +174,10 @@ footer {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  body.no-scroll & {
+  .no-scroll & {
     bottom: initial;
     margin-top: 0;
+    top: 42vh;
   }
   p {
     margin: 0;
@@ -262,6 +263,9 @@ nav {
   position: fixed;
   bottom: 5em;
   width: 100%;
+  .no-scroll & {
+    opacity: 1;
+  }
   li {
     margin: 0 5em;
   }

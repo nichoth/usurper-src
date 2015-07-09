@@ -52,4 +52,13 @@ body.page-contact {
       word-spacing: -0.3em;
     }
   }
+
+  .contact-icons {
+    @extend %inline-list;
+    @extend %good-list;
+    li {
+      width: 1em;
+      margin: 0 0.8em;
+    }
+  }
 }

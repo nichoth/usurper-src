@@ -14,6 +14,7 @@ var fs = require('fs');
 var contactTmpl = fs.readFileSync(__dirname + '/partial/contact.html', 'utf8');
 var domify = require('domify');
 
+// elmts
 var contactEl = domify(contactTmpl);
 var descEl = d = window.d = document.querySelector('.description');
 var s = window.s = document.querySelector.bind(document);

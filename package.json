@@ -17,7 +17,8 @@
   },
   "devDependencies": {
     "brfs": "^1.4.0",
-    "ecstatic": "^0.8.0"
+    "ecstatic": "^0.8.0",
+    "hyperstream": "^1.2.2"
   },
   "dependencies": {
     "catch-links": "^2.0.0",

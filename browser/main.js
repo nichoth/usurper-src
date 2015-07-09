@@ -1,4 +1,13 @@
+/**
+ * todo:
+ *   * use `fetch` to get contact.html partial from an api endpoint
+ *   * create static server
+ *       - need to generate public/contact/index.html and public/index.html
+ *         from templates index.html & partial/contact.html
+ */
+
 window.Promise = window.Promise || require('es6-promise').Promise;
+// require('register');
 var scrolltop = require('scrolltop');
 var rafScroll = require('raf-scroll');
 var fs = require('fs');
@@ -25,26 +34,12 @@ var show = require('single-page')(function(href) {
   else if (href === '/') {
     document.body.className =
       document.body.className.replace(/(?:^|\s)page-contact(?!\S)/g , '');
-      document.title = 'Usurper Handpoke';
-      c.innerHTML = '';
-      c.appendChild(descEl);
+    document.title = 'Usurper Handpoke';
+    c.innerHTML = '';
+    c.appendChild(descEl);
   }
 });
 require('catch-links')(document.querySelector('nav'), show);
-
-// if ('serviceWorker' in navigator) {
-//   navigator.serviceWorker.register('/sw.js')
-//     .then(function(registration) {
-//       console.log('registration successful ',registration);
-//       return registration;
-//     })
-//     .catch(function(err) {
-//       console.log(err);
-//     })
-//   ;
-// }
-
-// d.className += ' hidden';
 
 function updatePage(data) {
   document.title = data.title || '';

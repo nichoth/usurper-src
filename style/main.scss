@@ -1,11 +1,5 @@
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 
-@include font-face(
-  "league-gothic",
-  "../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont",
-  $file-formats: eot woff svg ttf
-);
-
 // type
 $displayFont: didot, 'Abril Fatface', sans-serif;
 $slabFont: 'Josefin Slab', serif;
@@ -68,7 +62,6 @@ $bodyLinkColor: $linkColor;
 html {
   background-color: black;
   height: 100%;
-  // @include radial-gradient($darkViolet 60%, black 160%);
 }
 
 img {

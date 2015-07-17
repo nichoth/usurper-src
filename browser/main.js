@@ -10,7 +10,7 @@ var descEl = d = window.d = document.querySelector('.description');
 var s = window.s = document.querySelector.bind(document);
 var h = window.h = s('hgroup.main');
 var c = s('#content');
-var nav = s('nav');
+// var nav = s('nav');
 var contactEl = s('.contact-info');
 
 // fetch('/api/contact/').then(function(resp) {
@@ -76,19 +76,26 @@ function scrollThing() {
 
 (function setup() {
   h.style.top = (h.offsetTop - (scrolltop()*0.3)) + 'px';
-  if (scrolltop() > 100) {
-    nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
-  }
+  // if (scrolltop() > 100) {
+  //   nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
+  // }
+  reveal(contactEl);
   scrollThing();
 })();
+
+function reveal(elmt) {
+  if (scrolltop() > 100) {
+    elmt.className = elmt.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
+  }
+}
 
 function update() {
   var scr = scrolltop();
   if (oldScr === scr) return;
   oldScr = scr;
   h.style.top = (offset - (scr*0.3)) + 'px';
-
-  if (scr > 100) {
-    nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
-  }
+  reveal(contactEl);
+  // if (scr > 100) {
+  //   nav.className = nav.className.replace(/(?:^|\s)hidden(?!\S)/g , '');
+  // }
 }

@@ -5,6 +5,7 @@
     ]
   },
   "scripts": {
+    "build-html": "node bin/render.js",
     "build-js": "npm run build-main && npm run build-sw",
     "build-sw": "browserify -d browser/sw.js > public/sw.js",
     "build-main": "browserify -d browser/main.js > public/main.js",

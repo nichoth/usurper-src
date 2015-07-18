@@ -52,23 +52,6 @@ $bodyLinkColor: $linkColor;
   letter-spacing: -0.1em;
 }
 
-%main-hr {
-  width: 58%;
-  margin-top: -2em;
-  margin-bottom: 0;
-  border: none;
-  height: 30px;
-  overflow: hidden;
-  color: $gray;
-  &:after {
-    content: ".......................................................................";
-    margin-left: 1em;
-    font-family: 'IM Fell English', serif;
-    font-size: 1.7em;
-    letter-spacing: 18px;
-  }
-}
-
 %no-scroll {
   min-height: initial;
   hgroup.main {
@@ -112,10 +95,6 @@ body {
 }
 
 // head part
-
-.main-hr {
-  @extend %main-hr;
-}
 
 hgroup.main {
   // margin-top: 26vh;
@@ -273,7 +252,7 @@ footer {
 }
 
 .contact-info {
-  @include transition(all 0.8s);
+  @include transition(opacity 0.8s);
   @extend %good-list;
   .no-scroll & {
     opacity: 1;
@@ -296,10 +275,6 @@ footer {
     margin-bottom: 0.5em;
     font-size: 2em;
   }
-  // .phone-number {
-  //   letter-spacing: 0.1em;
-  //   word-spacing: -0.3em;
-  // }
 }
 
 .contact-icons {
@@ -368,5 +343,3 @@ a {
   color: $linkColor;
   text-decoration: none;
 }
-
-// @import "contact";

@@ -3,6 +3,7 @@
 // require('./register.js');
 var scrolltop = require('scrolltop');
 var rafScroll = require('raf-scroll');
+var scroll = require('scroll');
 // var domify = require('domify');
 
 // elmts
@@ -11,7 +12,7 @@ var s = window.s = document.querySelector.bind(document);
 var h = window.h = s('hgroup.main');
 var c = s('#content');
 // var nav = s('nav');
-var contactEl = s('.contact-info');
+contactEl = s('.contact-info');
 
 // fetch('/api/contact/').then(function(resp) {
 //   return resp.text();
@@ -50,6 +51,17 @@ function pxToVh(px) {
   return px / (window.innerHeight / 100);
 }
 window.ptv = pxToVh;
+
+// click to scroll
+s('h1.main a').addEventListener('click', function(ev) {
+  ev.preventDefault();
+  // window.scrollTo(0, document.body.scrollHeight);
+  scroll.top(
+    document.body,
+    document.body.offsetHeight - window.innerHeight,
+    {duration: 500, ease: 'inSine'}
+  );
+});
 
 function noScroll() {
   rafScroll.remove();

@@ -1,15 +1,8 @@
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 
-@include font-face(
-  "league-gothic",
-  "../assets/font/league-gothic/webfonts/leaguegothic-regular-webfont",
-  $file-formats: eot woff svg ttf
-);
-
 // type
 $displayFont: didot, 'Abril Fatface', sans-serif;
 $slabFont: 'Josefin Slab', serif;
-$sansFont: 'league-gothic', Helvetica, sans-serif;
 
 $giantHeadFont: $displayFont;
 
@@ -22,6 +15,7 @@ $violetGray: #363138;
 $darkViolet: rgb(23,0,33);
 
 // elmt colors
+$ruleColor: $lightGray;
 $headColor: $violetGray;
 $hrColor: $violetGray;
 $bodyTextColor: white;
@@ -35,6 +29,16 @@ $bodyLinkColor: $linkColor;
   font: {
     family: $giantHeadFont;
     size: 13vw;
+  }
+}
+
+%good-list {
+  list-style: none;
+}
+
+%inline-list {
+  li {
+    display: inline-block;
   }
 }
 
@@ -65,10 +69,25 @@ $bodyLinkColor: $linkColor;
   }
 }
 
+%no-scroll {
+  min-height: initial;
+  hgroup.main {
+    @include transition(top, 0.2s ease-out);
+    top: 8.25vh;
+  }
+  #content {
+    margin-top: 32vh;
+    height: 68vh;
+  }
+}
+
+.no-scroll {
+  @extend %no-scroll;
+}
+
 html {
   background-color: black;
   height: 100%;
-  // @include radial-gradient($darkViolet 60%, black 160%);
 }
 
 img {
@@ -85,6 +104,7 @@ body {
   color: $bodyTextColor;
   font-family: $slabFont;
   min-height: 160vh;
+  text-align: center;
 }
 
 .hidden {
@@ -252,54 +272,93 @@ footer {
   }
 }
 
-nav {
-  // @extend %transition;
+.contact-info {
   @include transition(all 0.8s);
-  @extend %main-nav;
-  font-weight: 100;
-  text-align: center;
-  margin-top: 5em;
-  text-transform: uppercase;
-  position: fixed;
-  bottom: 5em;
-  width: 100%;
+  @extend %good-list;
   .no-scroll & {
     opacity: 1;
   }
+  color: $grayText;
+  font-weight: 100;
+  text-align: center;
+  position: fixed;
+  bottom: 5em;
+  width: 100%;
+  // margin-top: 15vh;
+  margin-top: 4em;
+  padding: 1.5em 0 0.5em 0;
+  // border-top: 1px solid $ruleColor;
+  // border-bottom: 1px solid $ruleColor;
+  a {
+    color: $grayText;
+  }
   li {
-    margin: 0 5em;
+    margin-bottom: 0.5em;
+    font-size: 2em;
   }
-  .link-icon {
-    padding: 3em;
-    letter-spacing: 0.1em;
+  // .phone-number {
+  //   letter-spacing: 0.1em;
+  //   word-spacing: -0.3em;
+  // }
+}
+
+.contact-icons {
+  @extend %inline-list;
+  @extend %good-list;
+  li {
+    width: 1em;
+    margin: 0 0.8em;
   }
 }
 
-%icon {
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  span {
-    position: relative;
-  }
-}
+// nav {
+//   // @extend %transition;
+//   @include transition(all 0.8s);
+//   @extend %main-nav;
+//   font-weight: 100;
+//   text-align: center;
+//   margin-top: 5em;
+//   text-transform: uppercase;
+//   position: fixed;
+//   bottom: 5em;
+//   width: 100%;
+//   .no-scroll & {
+//     opacity: 1;
+//   }
+//   li {
+//     margin: 0 5em;
+//   }
+//   .link-icon {
+//     padding: 3em;
+//     letter-spacing: 0.1em;
+//   }
+// }
 
-.icon-triangle {
-  @extend %icon;
-  background-image: url(/assets/img/triangle.svg);
-  span {
-    top: 1.3em;
-  }
-}
+// %icon {
+//   background-color: transparent;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: contain;
+//   span {
+//     position: relative;
+//   }
+// }
 
-.icon-circle {
-  @extend %icon;
-  background-image: url(/assets/img/circle.svg);
-  span {
-    top: 0.2em;
-  }
-}
+// .icon-triangle {
+//   @extend %icon;
+//   background-image: url(/assets/img/triangle.svg);
+//   span {
+//     top: 1.3em;
+//   }
+// }
+
+// .icon-circle {
+//   @extend %icon;
+//   background-image: url(/assets/img/circle.svg);
+//   span {
+//     top: 0.2em;
+//   }
+// }
 
 p a {
   color: $bodyLinkColor;
@@ -310,14 +369,4 @@ a {
   text-decoration: none;
 }
 
-%good-list {
-  list-style: none;
-}
-
-%inline-list {
-  li {
-    display: inline-block;
-  }
-}
-
-@import "contact";
+// @import "contact";

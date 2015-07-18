@@ -5,15 +5,16 @@
     ]
   },
   "scripts": {
-    "build-html": "node bin/render.js",
+    "build": "npm run build-js & npm run build-sass",
     "build-js": "npm run build-main && npm run build-sw",
     "build-sw": "browserify -d browser/sw.js > public/sw.js",
     "build-main": "browserify -d browser/main.js > public/main.js",
     "watch-js": "npm run watch-main & npm run watch-sw",
-    "watch-main": "watchify browser/main.js -o public/main.js -dv",
     "watch-sw": "watchify browser/sw.js -o public/sw.js -dv",
+    "watch-main": "watchify browser/main.js -o public/main.js -dv",
     "dev": "npm run watch-sass & npm run watch-js & npm start",
     "watch-sass": "sass --watch style/main.scss:public/style.css",
+    "build-sass": "sass style/main.scss > public/style.css --style=compressed",
     "start": "node server.js"
   },
   "devDependencies": {

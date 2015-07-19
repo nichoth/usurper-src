@@ -3,7 +3,7 @@
 // require('./register.js');
 var scrolltop = require('scrolltop');
 var rafScroll = require('raf-scroll');
-var scroll = require('scroll');
+var scrollTo = require('scroll-to');
 // var domify = require('domify');
 
 // elmts
@@ -53,14 +53,13 @@ function pxToVh(px) {
 window.ptv = pxToVh;
 
 // click to scroll
-s('h1.main a').addEventListener('click', function(ev) {
+s('h1.main').addEventListener('click', function handler(ev) {
   ev.preventDefault();
   // window.scrollTo(0, document.body.scrollHeight);
-  scroll.top(
-    document.body,
-    document.body.offsetHeight - window.innerHeight,
-    {duration: 500, ease: 'inSine'}
-  );
+  scrollTo(0,document.body.offsetHeight - window.innerHeight, {
+    ease: 'in-out-sine',
+    duration: 500
+  });
 });
 
 function noScroll() {

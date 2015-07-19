@@ -1,4 +1,8 @@
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/neat/app/assets/stylesheets/_neat.scss";
+@import "../bower_components/compass-breakpoint/stylesheets/breakpoint";
+@include breakpoint-set('to ems', true);
+@import "media-queries";
 
 // type
 $displayFont: didot, 'Abril Fatface', sans-serif;
@@ -24,13 +28,6 @@ $descriptionColor: $grayText;
 $navColor: white;
 $linkColor: white;
 $bodyLinkColor: $linkColor;
-
-%giant-head {
-  font: {
-    family: $giantHeadFont;
-    size: 13vw;
-  }
-}
 
 %good-list {
   list-style: none;
@@ -77,6 +74,12 @@ ul {
 }
 
 body {
+  @include breakpoint($shortScreen) {
+    min-height: 168vh;
+  }
+  @include breakpoint($narrowScreen) {
+    min-height: 170vh;
+  }
   margin: 0;
   color: $bodyTextColor;
   font-family: $slabFont;
@@ -92,7 +95,12 @@ body {
 // head part
 
 hgroup.main {
-  // margin-top: 26vh;
+  @include breakpoint($shortScreen) {
+    top: 22%;
+  }
+  @include breakpoint($narrowScreen) {
+    top: 25%;
+  }
   width: 100%;
   text-align: center;
   position: fixed;
@@ -103,7 +111,14 @@ hgroup.main {
 }
 
 h1.main {
-  @extend %giant-head;
+  font: {
+    family: $giantHeadFont;
+    size: 13vw;
+  }
+  @include breakpoint($narrowScreen) {
+    font-size: 21vw;
+    margin-left: -0.1em;
+  }
   color: $headColor;
   a {
     color: $headColor;
@@ -119,6 +134,10 @@ h1.main {
 }
 
 .little-main {
+  @include breakpoint($narrowScreen) {
+    font-size: 2.5vw;
+    margin-top: -1.5em;
+  }
   font-size: 1.5vw;
   font-family: $slabFont;
   color: $bodyTextColor;
@@ -144,14 +163,22 @@ h1.main {
 }
 
 footer {
-  opacity: 0.5;
+  @include breakpoint($narrowScreen) {
+    background-image: url("assets/img/bg-bah2-portrait.svg");
+    background-size: contain;
+    opacity: 0.5;
+  }
+  @include breakpoint ($bigPortrait) {
+    background-size: contain;
+  }
+  opacity: 0.35;
   height: 220px;
   width: 100%;
   position: fixed;
   bottom: 0;
   background-attachment: fixed;
   background-position: bottom center;
-  background-image: url(assets/img/bg-bah.png);
+  background-image: url(assets/img/bg-bah2.svg);
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
@@ -163,11 +190,14 @@ footer {
 
 // description
 .description {
+  @include breakpoint($shortScreen) {
+    bottom: -8em;
+  }
   // @extend %transition;
   // @include transition(bottom 0.25s);
   position: absolute;
   width: 100%;
-  bottom: -20vh;
+  bottom: -9em;
   color: $descriptionColor;
   margin-top: 4em;
   text-align: center;
@@ -184,15 +214,24 @@ footer {
   }
   .line1 {
     font-size: 1.3em;
+    @include breakpoint($shortScreen) {
+      font-size: 1.1em;
+    }
   }
   .line2 {
     font-style: italic;
+    @include breakpoint($shortScreen) {
+      font-size: 0.85em;
+    }
   }
   .in {
     font-size: 0.6em;
   }
   .line-last {
     font-size: 0.8em;
+    @include breakpoint($shortScreen) {
+      font-size: 0.65em;
+    }
   }
 }
 .description-circles-line {
@@ -225,6 +264,12 @@ footer {
 
 .line-behind {
   margin-bottom: 0.8em;
+  @include breakpoint($shortScreen) {
+    margin-bottom: 0.5em;
+  }
+  @include breakpoint($narrowScreen) {
+    width: 93%;
+  }
   border-bottom: 1px solid gray;
   width: 50%;
   display: inline-block;
@@ -252,20 +297,22 @@ footer {
 }
 
 .contact-info {
+  @include breakpoint($shortScreen) {
+    bottom: 1em;
+  }
+  @include breakpoint($narrowScreen) {
+    bottom: 20vh;
+  }
   @include transition(opacity 1s);
   @extend %good-list;
-  .no-scroll & {
-
-  }
   color: $grayText;
   font-weight: 100;
   text-align: center;
   position: fixed;
-  bottom: 5em;
+  bottom: 15vh;
   width: 100%;
-  // margin-top: 15vh;
-  margin-top: 4em;
-  padding: 1.5em 0 0.5em 0;
+  // margin-top: 5vh;
+  // padding: 1.5em 0 0.5em 0;
   // border-top: 1px solid $ruleColor;
   // border-bottom: 1px solid $ruleColor;
   a {
@@ -280,18 +327,17 @@ footer {
     }
     color: $grayText;
   }
-  li {
-    margin-bottom: 0.5em;
-    font-size: 2em;
-  }
 }
 
 .contact-icons {
   @extend %inline-list;
   @extend %good-list;
   li {
-    width: 1em;
-    margin: 0 0.8em;
+    width: 6%;
+    min-width: 3em;
+    &:nth-child(2) {
+      margin: 0 12%;
+    }
   }
 }
 

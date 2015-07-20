@@ -1,8 +1,8 @@
 {
-  "browserify": {
-  },
+  "browserify": {},
   "scripts": {
     "build": "npm run build-js & npm run build-sass",
+    "deploy": "node bin/publish.js",
     "build-js": "npm run build-main",
     "build-sw": "browserify -d browser/sw.js > public/sw.js",
     "build-main": "browserify -d browser/main.js | uglifyjs - --mangle --compress > public/main.js",
@@ -15,7 +15,8 @@
     "start": "node server.js"
   },
   "devDependencies": {
-    "ecstatic": "^0.8.0"
+    "ecstatic": "^0.8.0",
+    "gh-pages": "^0.3.1"
   },
   "dependencies": {
     "catch-links": "^2.0.0",

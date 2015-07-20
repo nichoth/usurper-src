@@ -1,14 +1,11 @@
 {
   "browserify": {
-    "transform": [
-      "brfs"
-    ]
   },
   "scripts": {
     "build": "npm run build-js & npm run build-sass",
-    "build-js": "npm run build-main && npm run build-sw",
+    "build-js": "npm run build-main",
     "build-sw": "browserify -d browser/sw.js > public/sw.js",
-    "build-main": "browserify -d browser/main.js > public/main.js",
+    "build-main": "browserify -d browser/main.js | uglifyjs - --mangle --compress > public/main.js",
     "watch-js": "npm run watch-main & npm run watch-sw",
     "watch-sw": "watchify browser/sw.js -o public/sw.js -dv",
     "watch-main": "watchify browser/main.js -o public/main.js -dv",
@@ -18,9 +15,7 @@
     "start": "node server.js"
   },
   "devDependencies": {
-    "brfs": "^1.4.0",
-    "ecstatic": "^0.8.0",
-    "hyperstream": "^1.2.2"
+    "ecstatic": "^0.8.0"
   },
   "dependencies": {
     "catch-links": "^2.0.0",
@@ -31,7 +26,6 @@
     "scrolltop": "0.0.1",
     "serviceworker-cache-polyfill": "^3.0.0",
     "single-page": "^1.0.0",
-    "sw-register": "0.0.0",
     "whatwg-fetch": "^0.9.0"
   }
 }

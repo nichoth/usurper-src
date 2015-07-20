@@ -7,11 +7,9 @@ var scrollTo = require('scroll-to');
 // var domify = require('domify');
 
 // elmts
-var descEl = d = window.d = document.querySelector('.description');
-var s = window.s = document.querySelector.bind(document);
-var h = window.h = s('hgroup.main');
-var c = s('#content');
-// var nav = s('nav');
+var d = document.querySelector('.description');
+var s = document.querySelector.bind(document);
+var h = s('hgroup.main');
 contactEl = s('.contact-info');
 
 // fetch('/api/contact/').then(function(resp) {
@@ -53,7 +51,7 @@ function pxToVh(px) {
 window.ptv = pxToVh;
 
 // click to scroll
-s('h1.main').addEventListener('click', function handler(ev) {
+s('h1.main a').addEventListener('click', function handler(ev) {
   ev.preventDefault();
   // window.scrollTo(0, document.body.scrollHeight);
   scrollTo(0,document.body.offsetHeight - window.innerHeight, {

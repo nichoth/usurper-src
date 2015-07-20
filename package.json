@@ -1,7 +1,7 @@
 {
   "browserify": {},
   "scripts": {
-    "build": "npm run build-js & npm run build-sass",
+    "build": "npm run build-js && npm run build-sass",
     "deploy": "node bin/publish.js",
     "build-js": "npm run build-main",
     "build-sw": "browserify -d browser/sw.js > public/sw.js",

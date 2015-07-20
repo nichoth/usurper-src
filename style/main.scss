@@ -335,8 +335,15 @@ footer {
   li {
     width: 6%;
     min-width: 3em;
+    vertical-align: middle;
+    &:first-child {
+      margin-left: 1%;
+    }
     &:nth-child(2) {
       margin: 0 12%;
+    }
+    &:last-child {
+      width: 7%;
     }
   }
 }

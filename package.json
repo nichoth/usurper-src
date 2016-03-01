@@ -2,8 +2,8 @@
   "browserify": {},
   "scripts": {
     "build": "npm run build-js && npm run build-sass",
-    "deploy": "node ./bin/publish.js",
-    "staging": "node ./bin/publish.sh https://github.com/nichoth/usurper-staging.git",
+    "deploy": "node bin/publish.js",
+    "staging": "node bin/publish.js https://github.com/nichoth/usurper-staging.git",
     "build-js": "npm run build-main",
     "build-sw": "browserify -d browser/sw.js > public/sw.js",
     "build-main": "browserify -d browser/main.js | uglifyjs - --mangle --compress > public/main.js",

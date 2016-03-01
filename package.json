@@ -11,7 +11,7 @@
     "watch-main": "watchify browser/main.js -o public/main.js -dv",
     "dev": "npm run watch-sass & npm run watch-js & npm start",
     "watch-sass": "node-sass -w style/style.scss -o public",
-    "build-sass": "node-sass style/style.scss > public/style.css --style compressed",
+    "build-sass": "node-sass style/style.scss > public/style.css --output-style compressed",
     "start": "node server.js"
   },
   "devDependencies": {

@@ -10,13 +10,14 @@
     "watch-sw": "watchify browser/sw.js -o public/sw.js -dv",
     "watch-main": "watchify browser/main.js -o public/main.js -dv",
     "dev": "npm run watch-sass & npm run watch-js & npm start",
-    "watch-sass": "sass --watch style/main.scss:public/style.css",
-    "build-sass": "sass style/main.scss > public/style.css --style=compressed",
+    "watch-sass": "node-sass -w style/style.scss -o public",
+    "build-sass": "node-sass style/style.scss > public/style.css --style compressed",
     "start": "node server.js"
   },
   "devDependencies": {
     "ecstatic": "^0.8.0",
-    "gh-pages": "^0.3.1"
+    "gh-pages": "^0.3.1",
+    "node-sass": "^3.4.2"
   },
   "dependencies": {
     "catch-links": "^2.0.0",

@@ -6,13 +6,9 @@ Ideally server would include a bootstrap in the initial request that tells us if
 
 ## todo
 
-* everything on one page
-* scroll situation – make link that scrolls down
-* no phone number
-* minify everything
-* bg image resolution
-* media queries
-* vertical ratio bg image
+* add about/description text
+
+Machine free tattoos by hand from Olympia, WA. Personal designs as well as commissioned pieces available. 
 
 ## launch
 * google analytics
